@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix</title>
-    <script defer src="js/app.js"></script>
+    <link rel="stylesheet" href="css/_reset.css">
     <link rel="stylesheet" href="css/app.css">
+    <!-- <script defer src="js/app.js"></script> -->
+
 </head>
 <body>
 
@@ -29,7 +31,7 @@
                 </ul>
             </li>
             <li class="header__li">
-                <a href="https://www.netflix.com/es/login" title="iniciar sesión" class="header_login">
+                <a href="https://www.netflix.com/es/login" title="iniciar sesión" class="header__login">
                     Iniciar sesión
                 </a>
             </li>
@@ -77,7 +79,7 @@
             </div>
             <div class="specs__col">
                 <img class="specs__img" src="" alt="pantalla">
-                <video class="specs_video" src=""></video>
+                <video class="specs__video" src=""></video>
             </div>
         </section>
 
@@ -92,8 +94,8 @@
             </div>
         </section>
 
-        <div class="faqs">
-            <h2 class="faqs__h2">Preguntas frecuentes</h2>
+        <div class="faq">
+            <h2 class="faq__h2">Preguntas frecuentes</h2>
                 <ul class="faq__ul">
                     <li class="faq__li">
                         <button class="faq__btn">
@@ -157,9 +159,9 @@
             
             <div class="register">
                 <p class="register__p">¿Quieres ver algo ya? Escribe tu dirección de correo para crear una suscripción a Netflix o reactivarla.</p>
-                <form action="#" method="post" class="register_form">
+                <form action="#" method="post" class="register__form">
                     <input class="register__input" type="email" name="email" id="email" autofocus>
-                    <input class="register_submit" type="submit" value="Empezar">
+                    <input class="register__submit" type="submit" value="Empezar">
                 </form>
             </section>
     </main>

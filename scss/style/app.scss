@@ -1,0 +1,96 @@
+.header {
+    width: 100%;
+    background-color: purple;
+    
+    &__a {}
+
+    &__h1 {
+        max-width: 200px;
+        background-color: red;
+    }
+
+    &__img {}
+
+    &__li {}
+
+    &__login {}
+
+    &__nav {
+        width: calc(100%-200px);
+        background: greenyellow;
+    }
+
+    &__ul {}
+}
+.faq {
+    &__btn {}
+
+    &__h2 {}
+
+    &__info {}
+
+    &__li {}
+
+    &__p {}
+
+    &__ul {}
+}
+
+.footer {
+    &__a {}
+
+    &__col {}
+
+    &__li {}
+
+    &__p {}
+
+    &__ul {}
+}
+
+
+.landing {
+    &__form {}
+
+    &__h2 {}
+
+    &__h3 {}
+
+    &__input {}
+
+    &__p {}
+
+    &__submit {}
+}
+
+.lang {
+    &___a {}
+
+    &__a {}
+
+    &__li {}
+}
+
+.main {}
+
+.register {
+    &__form {}
+
+    &__input {}
+
+    &__p {}
+
+    &__submit {}
+}
+
+.specs {
+    &__col {}
+
+    &__h2 {}
+
+    &__img {}
+
+    &__p {}
+
+    &__video {}
+}
