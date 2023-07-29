@@ -1,0 +1,29 @@
+@mixin flex($dir,$corte,$just,$align){
+    display: flex; 
+    flex-flow:  $dir $corte;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin grid( $columnas, $espacio){
+    display: grid; 
+    grid-template-column: repeat( $columnas, 1fr);
+    gap: $espacio;
+
+    @media screen and (max-width:480px){
+        grid-template-column: 1fr;
+        gap: 0em;
+    }
+}
+
+@mixin movil($medida: 480px){
+    @media screen and (max-width:medida){
+       @content;
+    }
+}
+
+@mixin neo($radius, $eje){
+    border-redius:$radius;
+    background: #e0e0e0;
+    box-shadow: $eje $eje ($eje*2) #bebebe, (-$eje)(-$eje)($eje*2) #ffffff;
+}
