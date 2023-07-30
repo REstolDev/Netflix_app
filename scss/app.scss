@@ -53,17 +53,21 @@ body{
 
     &__select {
         background-color: transparent;
-        max-height: 2rem;
+        min-height: 1.6rem;
         padding: 0.5rem 2rem;
         border:1px solid #606060;
         border-radius: 0.25rem;
         z-index: 1;
     }
+    &__divlogin{
+        @include flex(row, nowrap, center, center);
+
+    }
 
     &__login {    
         max-width:8rem;
         min-width: fit-content;
-        min-height: fit-content;
+        min-height: 1.8rem;
         border:1px solid transparent;
         border-radius: 0.25rem;
         background-color: #e50914;
