@@ -45,11 +45,21 @@
         <section class="landing">
             <h1 class="landing__h2">Series, películas y más… ilimitadas</h1>
             <h3 class="landing__h3">Disfruta donde quieras. Cancela cuando quieras.</h3>
-            <p class="landing__p">¿Quieres ver algo ya? Escribe tu dirección de correo para crear una suscripción a Netflix o reactivarla.</p>
-            <form action="#" class="landing__form" method="post">
-                <input class="landing__input" type="email" name="email" id="email" autofocus>
-                <input class="landing__submit" type="submit" value="Empezar">
-            </form>
+            <div class="register">
+                <p class="register__p">¿Quieres ver algo ya? Escribe tu dirección de correo para crear una suscripción a Netflix o reactivarla.</p>
+                <form action="#" method="post" class="register__form">
+                    <input class="register__input" type="email" name="email" id="email" autocomplete="email">
+                    <button class="register__btn" type="submit">
+                        Empezar
+                        <div class="register__div">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="register_svg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg> 
+                        </div>
+                    </button> 
+                </form>
+            </div>
+
         </section>
 
         <section class="specs">
@@ -157,15 +167,22 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+        </div>
             
-            <div class="register">
-                <p class="register__p">¿Quieres ver algo ya? Escribe tu dirección de correo para crear una suscripción a Netflix o reactivarla.</p>
-                <form action="#" method="post" class="register__form">
-                    <input class="register__input" type="email" name="email" id="email" autofocus>
-                    <input class="register__submit" type="submit" value="Empezar">
-                </form>
-            </section>
+        <div class="register">
+            <p class="register__p">¿Quieres ver algo ya? Escribe tu dirección de correo para crear una suscripción a Netflix o reactivarla.</p>
+            <form action="#" method="post" class="register__form">
+                <input class="register__input" type="email" name="email" id="email"  autofocus>
+                <button class="register__btn" type="submit">
+                    Empezar
+                    <div class="register__div">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="register_svg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg> 
+                    </div>
+                </button> 
+            </form>
+        </div>
     </main>
         
     <footer class="footer">
