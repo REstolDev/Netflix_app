@@ -17,7 +17,7 @@
 }
 
 @mixin movil($medida: 480px){
-    @media screen and (max-width:medida){
+    @media screen and (max-width:$medida){
        @content;
     }
 }
