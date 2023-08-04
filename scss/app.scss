@@ -9,19 +9,19 @@ body{
 .header {
     max-width: calc(100% - 3rem);
     margin:0 auto;
-    background-color: purple;
+    //background-color: purple;
     @include flex(row, nowrap, space-between, center);
     height: 5rem; 
 
     &__logo {
-        background-color: orange;
+        background-color: red;
     }
     &__a {}
 
     &__img {
         width: 100px;
         height:50px;
-        background-color: red;
+        //background-color: red;
     }
 
     &__nav {
@@ -30,37 +30,6 @@ body{
         gap:1rem;
     }
 
-    &__lang{
-        max-width:10rem;
-        background-color: transparent;
-        @include flex(row, nowrap, center, center);
-        gap:0.5rem;
-        position: relative;
-        min-height: 2rem;
-    }
-
-    &__globesvg{
-        position: absolute;
-        left:0.5rem;
-        width: 16px;
-    }
-
-    &__arrowsvg{
-        position: absolute;
-        right:0.5rem;
-        width: 16px;
-        z-index: 0;
-    }
-
-    &__select {
-        background-color: transparent;
-        min-height: 2rem;
-        padding: 0.5rem 2rem;
-        z-index: 1;
-        border:1px solid #606060;
-        border-radius: 0.25rem;
-        @include movil(600px){ width:3.875rem };
-    }
     &__divlogin{
         @include flex(row, nowrap, center, center);
 
@@ -80,9 +49,41 @@ body{
     }
 }
 
+.lang{
+    max-width:fit-content;
+    background-color: transparent;
+    @include flex(row, nowrap, center, center);
+    gap:0.5rem;
+    position: relative;
+    min-height: 2rem;
+
+    &__globesvg{
+        position: absolute;
+        left:0.5rem;
+        width: 16px;
+    }
+
+    &__arrowsvg{
+        right:0.5rem;
+        position: absolute;
+        z-index: 0;
+        width: 16px;
+    }
+
+    &__select {
+        background-color: transparent;
+        min-height: 2rem;
+        padding: 0.5rem 2rem;
+        z-index: 1;
+        border:1px solid #606060;
+        border-radius: 0.25rem;
+        @include movil(600px){ width:3.875rem };
+    }
+}
+
 .landing {
     max-width: calc(100% - 3rem);
-    background-color: #606060;
+    //background-color: #606060;
     @include flex(column, nowrap,center,center);
     gap:1rem;
     margin:0 auto;
@@ -101,11 +102,12 @@ body{
 }
 
 .register {
-    background-color: #8cb35d;
+    //background-color: #8cb35d;
     @include flex(column, nowrap,center,center);
     gap:1rem;
-    margin: 1.5rem auto 0 auto;
+    margin: 1rem auto 0 auto;
     padding:0 4rem;
+    width: 100%;
     &__form {
         @include flex(row, nowrap,space-between,center);
         gap:1rem;
@@ -116,7 +118,7 @@ body{
     }
 
     &__input {
-        background-color: black;
+        background: rgba(22, 22, 22, 0.7);
         border:1px solid #606060;
         border-radius: 0.25rem;
         padding: 0.5rem 1rem;  
@@ -183,7 +185,7 @@ body{
     }
 
     &__h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 700;
     }
 
@@ -192,12 +194,12 @@ body{
 
     &__p {
         margin: 1.125rem 0 0;
-        font-size: 1.125rem;
+        font-size: 1.5rem;
         font-weight: 400;
     }
 
     &__div-video {
-        background-color: #b35d63;
+       // background-color: #b35d63;
         z-index: -1;
         overflow: hidden;
         max-width: 73%;
@@ -219,7 +221,7 @@ body{
     @include flex(row, nowrap,space-between,center);
     gap:1rem;
     margin: 0 auto;
-    background: rgb(0,0,0);
+    //background: rgb(0,0,0);
     width: 60%;
     padding: 0.35rem 0.75rem;
     border: 2px solid rgba(128,128,128,0.7);
@@ -253,73 +255,67 @@ body{
 }
 
 .faq {
-    background:#0071eb;
+    //background:#0071eb;
     max-width: calc(100% - 3rem);
     margin:0 auto;
     @include flex(column, nowrap, center, center);
     padding:4.5rem 0;
 
     &__h2 {
-        background:#00eb33;
-        font-size: 4em;
+       // //background:#00eb33;
+        font-size: 3.5em;
+        font-weight: 800;
         width: 100%;
         text-align: center;
     }
 
     &__ul {
-        background:#1f00eb;
+        //background:#1f00eb;
         width:100%;
     }
 
     &__li {
-        background:#ebb400;
+        //background:#ebb400;
         margin-bottom: 0.25rem; 
-        &.active .faq__info{display:block};
-        &.active .faq__svg{transform: rotate(0deg)};
+        &.active .faq__info{  max-height: 50rem };
+        &.active .faq__svg{ transform: rotate(0deg) };
     }
 
     &__btn {
-        background:#b0eb00;
+        //background:#b0eb00;
         width:100%;
         cursor: pointer;
         @include flex(row, nowrap,space-between,center);
     }
 
     &__span{
-        background-color: #606060;
+        //background-color: #606060;
         font-size: 1.5rem;
         font-weight: 400;
         padding: 1.5rem;
     }
 
     &__svg{
-        background-color: #d31414;
+        //background-color: #d31414;
         width:3rem;
         height:3rem;
         margin-right:1rem;
         transform: rotate(-45deg);
+        transition: transform .5s ease;
     }
 
     &__info {
-        background:#eb0047;
-        margin-top: 0.125rem;
-        display:none;
-
-        &.active{
-            display:block;
-        }
-
-        &.active .faq__svg{
-            transform: rotate(-45deg);
-        }
-
+        //background:#eb0047;
+        transition: all .5s cubic-bezier(.79,.14,.15,.86);
+        overflow:hidden;
+        margin-top: .125rem;
+        max-height: 0rem;
     }
 
     &__p {
-        background:#eb00d4;
+        //background:#eb00d4;
         font-size: 1.5rem;
         font-weight: 400;
-        max-height: 75rem;
         padding: 1.5rem;
     }
 
@@ -330,27 +326,31 @@ body{
     max-width: calc(100% - 3rem);
     margin:0 auto;
     padding:4.5rem 0px;
-    &__a {}
+    &__a {
+        text-decoration: underline;
+        font-size: 1rem;
+    }
 
-    &__col {}
+    &__col {
+        padding: 1rem 0;
+    }
 
-    &__li {}
+    &__li {
+        text-decoration: underline;
+        font-size: 0.9rem;
+        margin-bottom:1rem;
+    }
 
     &__p {}
 
-    &__ul {}
-}
-
-.lang {
-    &___a {}
-
-    &__a {}
-
-    &__li {}
+    &__ul {
+        column-count:3;
+        @include movil(600px){ column-count:2 };
+    }
 }
 
 .main {}
 
 @include desktop(){
-    .header, .footer, .faq, .specs, .landing{    max-width: calc(85% - 6rem)};
+    .header, .footer, .faq, .specs, .landing{ max-width: calc(85% - 6rem)};
 };
