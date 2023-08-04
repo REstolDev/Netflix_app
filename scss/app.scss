@@ -84,9 +84,9 @@ body{
     max-width: calc(100% - 3rem);
     background-color: #606060;
     @include flex(column, nowrap,center,center);
-    gap:1.5rem;
+    gap:1rem;
     margin:0 auto;
-    padding: 3.75rem 1rem;
+    padding: 4.5rem 1rem;
     text-align: center;
 
     &__h2 {
@@ -101,16 +101,17 @@ body{
 }
 
 .register {
-    width:100%;
     background-color: #8cb35d;
     @include flex(column, nowrap,center,center);
     gap:1rem;
+    margin: 1.5rem auto 0 auto;
+    padding:0 4rem;
     &__form {
         @include flex(row, nowrap,space-between,center);
-        gap:0.25rem;
+        gap:1rem;
         @include movil(600px){
             @include flex(column, nowrap,space-between,center);
-            gap:1rem;
+            gap:0.5rem;
         };
     }
 
@@ -125,7 +126,6 @@ body{
 
     &__p {
         font-size: 1.25em;
-        padding:0 4rem;
     }
 
     &__btn {
@@ -160,7 +160,7 @@ body{
 .specs {
     max-width: calc(100% - 3rem);
     margin:0 auto;
-    padding: 3.5rem 0;
+    padding: 4.5rem 0;
     @include flex(row, nowrap,space-between,center);
         @include movil(960px){
             @include flex(column, nowrap,space-between,center);
@@ -253,24 +253,83 @@ body{
 }
 
 .faq {
+    background:#0071eb;
     max-width: calc(100% - 3rem);
     margin:0 auto;
-    &__btn {}
+    @include flex(column, nowrap, center, center);
+    padding:4.5rem 0;
 
-    &__h2 {}
+    &__h2 {
+        background:#00eb33;
+        font-size: 4em;
+        width: 100%;
+        text-align: center;
+    }
 
-    &__info {}
+    &__ul {
+        background:#1f00eb;
+        width:100%;
+    }
 
-    &__li {}
+    &__li {
+        background:#ebb400;
+        margin-bottom: 0.25rem; 
+        &.active .faq__info{display:block};
+        &.active .faq__svg{transform: rotate(0deg)};
+    }
 
-    &__p {}
+    &__btn {
+        background:#b0eb00;
+        width:100%;
+        cursor: pointer;
+        @include flex(row, nowrap,space-between,center);
+    }
 
-    &__ul {}
+    &__span{
+        background-color: #606060;
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding: 1.5rem;
+    }
+
+    &__svg{
+        background-color: #d31414;
+        width:3rem;
+        height:3rem;
+        margin-right:1rem;
+        transform: rotate(-45deg);
+    }
+
+    &__info {
+        background:#eb0047;
+        margin-top: 0.125rem;
+        display:none;
+
+        &.active{
+            display:block;
+        }
+
+        &.active .faq__svg{
+            transform: rotate(-45deg);
+        }
+
+    }
+
+    &__p {
+        background:#eb00d4;
+        font-size: 1.5rem;
+        font-weight: 400;
+        max-height: 75rem;
+        padding: 1.5rem;
+    }
+
+    
 }
 
 .footer {
     max-width: calc(100% - 3rem);
     margin:0 auto;
+    padding:4.5rem 0px;
     &__a {}
 
     &__col {}
