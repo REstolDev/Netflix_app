@@ -26,3 +26,30 @@ btn.forEach( (v , i) => {
         })  
     })
 
+
+const input = document.querySelectorAll('.register__input');
+const label = document.querySelectorAll('.register__label');
+let change = false;
+console.log(change);
+    btn.forEach((v , i) => btn[i].addEventListener( 'click',()=>label.classList.add('active')));
+
+    input.forEach( (v , i) => {
+
+        input[i].addEventListener( 'click',()=>label[i].classList.add('active'));
+        input[i].addEventListener( 'change',()=>{
+
+            change=true;
+            console.log(change);
+            label[i].classList.add('active')
+
+        });
+        console.log(change);
+        
+        input[i].addEventListener( 'blur',()=>{
+
+            if(change==false)
+                label[i].classList.remove('active')
+
+            });
+
+    })

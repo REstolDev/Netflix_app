@@ -1,3 +1,51 @@
+@mixin h1($family:var(--tipo-principal) ,$size:var(--fontsize-h1), $weight:var(--fontweight-h1)){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin h2($family:var(--tipo-principal) ,$size:var(--fontsize-h2), $weight:var(--fontweight-h2)){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin h3($family:var(--tipo-secundaria) ,$size:var(--fontsize-h3), $weight:var(--fontweight-h3)){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin p($family:var(--tipo-secundaria) ,$size:var(--fontsize-p), $weight:var(--fontweight-p)){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin h1Desktop($family:var(--tipo-principal) ,$size:var(--fontsize-h1Desktop), $weight:var(--fontweight-h1Desktop)){
+    @media screen and (min-width:960px){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    }
+}
+
+@mixin h2Desktop($family:var(--tipo-principal) ,$size:var(--fontsize-h2Desktop), $weight:var(--fontweight-h2Desktop)){
+    @media screen and (min-width:960px){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    }
+}
+
+@mixin pDesktop($family:var(--tipo-secundaria) ,$size:var(--fontsize-pDesktop), $weight:var(--fontweight-pDesktop)){
+    @media screen and (min-width:960px){
+        font-family: $family;
+        font-size: $size;
+        font-weight: $weight;
+        }
+}
+
 @mixin flex($dir,$corte,$just,$align){
     display: flex; 
     flex-flow:  $dir $corte;
@@ -10,14 +58,14 @@
     grid-template-column: repeat( $columnas, 1fr);
     gap: $espacio;
 
-    @media screen and (max-width:480px){
+    @media screen and (min-width:480px){
         grid-template-column: 1fr;
         gap: 0em;
     }
 }
 
-@mixin movil($medida: 600px){
-    @media screen and (max-width:$medida){
+@mixin tablet($medida: 600px){
+    @media screen and (min-width:$medida){
        @content;
     }
 }

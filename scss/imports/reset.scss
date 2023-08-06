@@ -121,7 +121,7 @@ body {
   font-size   : 100%;
   font-family : var(--tipo-principal);
   color       : var(--negro);
-  /* (Opcional) */ hyphens: auto;
+  /* (Opcional) */ hyphens: none;
   /* (Opcional) */ font-smooth: always;
   /* (Opcional) */ -webkit-font-smoothing: antialiased;
   /* (Opcional) */ -moz-osx-font-smoothing: grayscale;

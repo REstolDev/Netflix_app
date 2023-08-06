@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix</title>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/fonts/stylesheet.css">
     <script defer src="app.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <header class="header">
+<header class="headerContainer">
+    <div class="headerFilter">
+    <div class="header">
         <div class="header__logo">
             <a href="#" title="Netflix" class="header__a">
-            <img src="#" alt="Netflix" class="header__img">
+            <img src="source/img/Netflix_Logo_PMS.png" alt="Netflix_Logo" class="header__img">
             </a>
         </div>
        
@@ -38,21 +37,21 @@
                 </a>
             </div>
         </nav>
-    </header>
-
-    <main class="main">
-
+    </div>
         <section class="landing">
-            <h1 class="landing__h2">Series, películas y más… ilimitadas</h1>
+            <h1 class="landing__h1">Series, películas y más… ilimitadas</h1>
             <p class="landing__p">Disfruta donde quieras. Cancela cuando quieras.</p>
             <div class="register">
                 <p class="register__p">¿Quieres ver algo ya? Escribe tu dirección de correo para crear una suscripción a Netflix o reactivarla.</p>
                 <form action="#" method="post" class="register__form">
-                    <input class="register__input" type="email" name="email" id="email" autocomplete="email">
+                    <div class="register__div--input">
+                        <label for="email" class="register__label">Dirección de correo</label>
+                        <input class="register__input" type="email" name="email" id="email">
+                    </div>
                     <button class="register__btn" type="submit">
                         Empezar
                         <div class="register__div">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="register_svg" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="register__svg" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                             </svg> 
                         </div>
@@ -60,6 +59,10 @@
                 </form>
             </div>
         </section>
+    </div>
+</header>
+
+    <main class="main">
 
         <section class="specs">
             <div class="specs__col">
@@ -116,14 +119,14 @@
             <div class="specs__col div-img">
                 <img class="specs__img" src="source/img/mobile-0819.jpg" alt="stranger things">
                 <div class="animation">
-                    <div class="animation__div">
+                    <div>
                         <img class="animation__img" src="source/img/boxshot.png" alt="stranger thingscover">
                     </div>
                     <div class="animation__div">
                         <p class="animation__p">Stranger Things</p>
                         <p class="animation__p--blue">Descargándose...</p>
                     </div>
-                    <div class="animation__div">
+                    <div>
                         <img class="animation__img" src="source/img/download-icon.gif" alt="download_gif">
                     </div>
                 </div>
@@ -196,8 +199,11 @@
                 <div class="register">
                     <p class="register__p">¿Quieres ver algo ya? Escribe tu dirección de correo para crear una suscripción a Netflix o reactivarla.</p>
                     <form action="#" method="post" class="register__form">
-                        <input class="register__input" type="email" name="email" id="email">
-                        <button class="register__btn" type="submit">
+                        <div class="register__div--input">
+                            <label for="email" class="register__label">Dirección de correo</label>
+                            <input class="register__input" type="email" name="email" id="email">
+                        </div>
+                         <button class="register__btn" type="submit">
                             Empezar
                             <div class="register__div">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="register_svg" viewBox="0 0 16 16">
@@ -213,7 +219,7 @@
     
     <footer class="footer">
         <div class="footer__col">
-            <p>¿Preguntas? Llama al <a href="" class="footer__a">900-759-106</a></p>
+            <p class="footer__p">¿Preguntas? Llama al <a href="" class="footer__a">900-759-106</a></p>
         </div>
         <div class="footer__col">
             <ul class="footer__ul">
@@ -287,7 +293,7 @@
                 </svg>
             </div> 
         </div>
-        <p class="footer__p">
+        <p class="footer__p--small">
             Netflix España
         </p>
     </footer>
