@@ -70,6 +70,12 @@
     }
 }
 
+@mixin laptop($medida: 960px){
+    @media screen and (min-width:$medida){
+       @content;
+    }
+}
+
 @mixin desktop($medida: 1280px){
     @media screen and (min-width:$medida){
        @content;

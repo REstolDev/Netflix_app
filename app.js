@@ -1,55 +1,62 @@
-// function active(divId){
-//     const arr = ['1','2','3','4','5'];
-//     for (var i=0; i < arr.length; i++){
-//         let divElem = document.getElementById(arr[i]);
-//         if (divId == arr[i]){
-//             divElem.classList.add('active')
-//         }
-//         else{
-//             divElem.classList.remove('active')
-//         }
-//     }
-// }
+const btnFaq = document.querySelectorAll('.faq__btn');
+const liFaq = document.querySelectorAll('.faq__li');
 
-const btn = document.querySelectorAll('.faq__btn');
-const li = document.querySelectorAll('.faq__li');
+btnFaq.forEach( (v , i) => {
+    btnFaq[i].addEventListener( 'click',()=>{
 
-btn.forEach( (v , i) => {
-    btn[i].addEventListener( 'click',()=>{
-
-        if(li[i].classList.value=='faq__li active') 
-            li[i].classList.remove('active');
+        if(liFaq[i].classList.value=='faq__li active') 
+            liFaq[i].classList.remove('active');
         else{
-            li.forEach((v,i)=> li[i].classList.remove('active'));
-            li[i].classList.add('active');
+            liFaq.forEach((v,i)=> liFaq[i].classList.remove('active'));
+            liFaq[i].classList.add('active');
             }
         })  
     })
 
 
-const input = document.querySelectorAll('.register__input');
-const label = document.querySelectorAll('.register__label');
+const inputVal = document.querySelectorAll('.register__input');
+const labelVal = document.querySelectorAll('.register__label');
+const validation = document.querySelectorAll('.register__validation');
+const btnVal = document.querySelectorAll('.register__btn');
+let email='';
 let change = false;
-console.log(change);
-    btn.forEach((v , i) => btn[i].addEventListener( 'click',()=>label.classList.add('active')));
 
-    input.forEach( (v , i) => {
+btnVal.forEach( (v , i) => {
+    btnVal[i].addEventListener( 'click',()=>{
 
-        input[i].addEventListener( 'click',()=>label[i].classList.add('active'));
-        input[i].addEventListener( 'change',()=>{
+        if(/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.exec(email)) inputVal[i].focus();
 
-            change=true;
-            console.log(change);
-            label[i].classList.add('active')
-
-        });
-        console.log(change);
-        
-        input[i].addEventListener( 'blur',()=>{
-
-            if(change==false)
-                label[i].classList.remove('active')
-
-            });
-
+        })  
     })
+
+inputVal.forEach( (v , i) => {
+    inputVal[i].addEventListener( 'click',()=>labelVal[i].classList.add('active'));
+    
+    inputVal[i].addEventListener( 'change',()=>{
+        
+        change=true;
+        labeVal[i].classList.add('active');
+        
+    });
+        
+    inputVal[i].addEventListener( 'keyup',()=>{
+        email= inputVal[i].value;
+         if (/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.exec(email)){
+             inputVal[i].classList.add('valTrue');
+             inputVal[i].classList.remove('valFalse');
+             validation[i].classList.remove('valError');
+         } else {
+             inputVal[i].classList.add('valFalse');
+             inputVal[i].classList.remove('valTrue');
+             validation[i].classList.add('valError');
+         }
+        let message = email=="" ? 'La dirección de correo es obligatoria.' : 'Escribe una dirección válida de correo electrónico.';
+        document.getElementById('valMessage').innerHTML = message;
+    });
+    
+    inputVal[i].addEventListener( 'blur',()=>{
+        if(change==false)
+            labelVal[i].classList.remove('active');
+        });
+        
+});
