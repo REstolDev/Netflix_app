@@ -11,11 +11,16 @@ body{
     background-image:url('/source/img/portada-netflix.jpg') ;
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 .headerFilter{
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
     background-color: rgb(0 0 0 / 40%);
+
+    &::before{
+        text-align: center;
+        color:var(--red);
+        content:"ATTENTION: Esto es una página de muestra / This is a sample  page ";
+    }
 }
 
 .header {
@@ -62,7 +67,7 @@ body{
         color:var(--white);
         text-align: center;
         font-size: 0.875rem;
-        font-weight: 500;
+        font-weight: 600;
         min-height: 2rem;
         padding: 0.25rem 1rem;
         &:hover{
@@ -95,14 +100,13 @@ body{
 
     &__select {
         background-color: transparent;
-        max-height: 2rem;
-        padding: 0.5rem 2rem;
+        min-height: 2rem;
+        padding: 0.25rem 2rem;
         z-index: 1;
         border:1px solid #606060;
         border-radius: 0.25rem;
         font-family: var(--tipo-principal);
         font-size: 0.95rem;
-        line-height: 1rem;
         width:3.875rem ;
         @include tablet(){ width:100% };
     }
