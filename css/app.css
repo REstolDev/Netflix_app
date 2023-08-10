@@ -149,7 +149,8 @@ body {
   --redhover: #c11119;
   --green: #2bb871;
   --orange: #e87c03;
-  --grey: #333;
+  --grey: #8c8c8c;
+  --darkgrey: #333333;
   --blue: #0080ff;
   /* Tipografía */
   --tipo-principal: "netflix_sansbold";
@@ -165,9 +166,11 @@ body {
   --fontsize-pDesktop: 1.5rem ;
   --fontsize-h1Desktop: 3rem ;
   --fontsize-h2Desktop: 2.85rem ;
+  --fontsize-h3Desktop: 2.55rem ;
   --fontweight-pDesktop: 600;
   --fontweight-h1Desktop: 900;
   --fontweight-h2Desktop: 900;
+  --fontweight-h3Desktop: 600;
 }
 
 body {
@@ -185,20 +188,19 @@ body {
   }
 }
 
-.headerContainer {
+.container {
   background-image: url("/source/img/portada-netflix.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.headerFilter {
+.container__filter {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
   background-color: rgba(0, 0, 0, 0.4);
 }
-.headerFilter::before {
+.container__filter::before {
   text-align: center;
   color: var(--red);
-  content: "ATTENTION: Esto es una página de muestra / This is a sample  page ";
+  content: "¡¡¡ATTENTION: Esto es una página de muestra / This is a sample  page!!! ";
 }
 
 .header {
@@ -559,14 +561,18 @@ body {
   max-width: 73%;
   max-height: 55%;
   position: absolute;
-  top: 21%;
-  left: 13%;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 .specs__div-video.video-devices {
-  top: 11%;
-  left: 18%;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 62%;
   max-height: 42%;
+  width: 100%;
 }
 
 .animation {
@@ -744,12 +750,20 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-  .header, .footer, .faq, .specs, .landing {
+  .header,
+  .footer,
+  .faq,
+  .specs,
+  .landing {
     max-width: calc(100% - 4rem);
   }
 }
 @media screen and (min-width: 1280px) {
-  .header, .footer, .faq, .specs, .landing {
+  .header,
+  .footer,
+  .faq,
+  .specs,
+  .landing {
     max-width: calc(85% - 6rem);
   }
 }/*# sourceMappingURL=app.css.map */

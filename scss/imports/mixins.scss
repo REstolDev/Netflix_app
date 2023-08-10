@@ -38,6 +38,13 @@
     }
 }
 
+@mixin h3Desktop($family:var(--tipo-secundaria) ,$size:var(--fontsize-h3Desktop), $weight:var(--fontweight-h3Desktop)){
+    @media screen and (min-width:960px){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    }
+}
 @mixin pDesktop($family:var(--tipo-secundaria) ,$size:var(--fontsize-pDesktop), $weight:var(--fontweight-pDesktop)){
     @media screen and (min-width:960px){
         font-family: $family;

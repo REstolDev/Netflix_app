@@ -150,6 +150,7 @@ body {
   --green: #2bb871;
   --orange: #e87c03;
   --grey: #8c8c8c;
+  --darkgrey: #333333;
   --blue: #0080ff;
   /* Tipografía */
   --tipo-principal: "netflix_sansbold";
@@ -165,9 +166,11 @@ body {
   --fontsize-pDesktop: 1.5rem ;
   --fontsize-h1Desktop: 3rem ;
   --fontsize-h2Desktop: 2.85rem ;
+  --fontsize-h3Desktop: 2.55rem ;
   --fontweight-pDesktop: 600;
   --fontweight-h1Desktop: 900;
   --fontweight-h2Desktop: 900;
+  --fontweight-h3Desktop: 600;
 }
 
 body {
@@ -184,27 +187,26 @@ body {
   }
 }
 
-.headerContainer {
+.container {
   background-color: #000;
 }
-@media screen and (min-width: 600px) {
-  .headerContainer {
+@media screen and (min-width: 740px) {
+  .container {
     background-image: url("/source/img/portada-netflix.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
 }
-
-@media screen and (min-width: 600px) {
-  .headerFilter {
+@media screen and (min-width: 740px) {
+  .container__filter {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
     background-color: rgba(0, 0, 0, 0.4);
   }
 }
-.headerFilter::before {
+.container__filter::before {
   text-align: center;
   color: var(--red);
-  content: "ATTENTION: Esto es una página de muestra / This is a sample  page ";
+  content: "¡¡¡ATTENTION: Esto es una página de muestra / This is a sample  page!!! ";
 }
 
 .header {
@@ -216,12 +218,17 @@ body {
   align-items: center;
   height: 5rem;
 }
+@media screen and (min-width: 740px) {
+  .header {
+    max-width: calc(100% - 4rem);
+  }
+}
 .header__svg--logo {
   width: 5.5625rem;
   height: 1.5rem;
   color: var(--red);
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 740px) {
   .header__svg--logo {
     width: 9.25rem;
     height: 2.5rem;
@@ -268,44 +275,52 @@ body {
   }
 }
 
-.landing {
+.content {
   padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: left;
   margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
 }
-@media screen and (min-width: 600px) {
-  .landing {
-    padding: 7rem 0;
+@media screen and (min-width: 740px) {
+  .content {
+    width: 60%;
+    max-width: 450px;
+    padding: 3.5rem 4rem 2.5rem;
+    max-width: 450px;
+    margin-bottom: 90px;
   }
 }
-.landing__h1 {
-  font-family: var(--tipo-principal);
-  font-size: var(--fontsize-h2);
-  font-weight: var(--fontweight-h2);
-  text-align: left;
-}
-.landing__p {
+.content__p {
   color: var(--grey);
   font-size: 1rem;
 }
-.landing__p--captcha {
+.content__p--captcha {
   font-size: 0.75rem;
   color: var(--grey);
 }
-.landing__a--white {
+.content__p--extendedtext {
+  visibility: hidden;
+}
+.content__p--extendedtext.visible {
+  visibility: visible;
+}
+.content__btn {
+  color: var(--blue);
+  cursor: pointer;
+}
+.content__a--white {
   color: var(--white);
 }
-.landing__a--blue {
+.content__a--blue {
   color: var(--blue);
   font-size: 0.75rem;
 }
 
 .login {
-  background-color: rgba(0, 0, 0, 0.75);
-  border-radius: 4px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -314,11 +329,17 @@ body {
   min-height: 400px;
   gap: 2rem;
 }
+.login__h1 {
+  font-family: var(--tipo-principal);
+  font-size: var(--fontsize-h2);
+  font-weight: var(--fontweight-h2);
+  text-align: left;
+}
 @media screen and (min-width: 960px) {
-  .login {
-    padding: 5rem 4.5rem;
-    width: 50%;
-    min-height: 660px;
+  .login__h1 {
+    font-family: var(--tipo-principal);
+    font-size: var(--fontsize-h2Desktop);
+    font-weight: var(--fontweight-h2Desktop);
   }
 }
 .login__form {
@@ -335,11 +356,12 @@ body {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  max-width: 25rem;
 }
 .login__input {
-  border: 1px solid #606060;
+  border: 2px solid var(--darkgrey);
   border-radius: 0.25rem;
+  background-color: var(--darkgrey);
+  color: var(--grey);
   padding: 1.5rem 1rem 0.5rem;
   height: 3.5rem;
   font-size: 1rem;
@@ -353,7 +375,7 @@ body {
   outline: none;
 }
 .login__validation {
-  display: flex;
+  display: none;
   font-size: 0.75rem;
   margin-top: 0.25rem;
   color: var(--orange);
@@ -364,13 +386,6 @@ body {
   flex-flow: row nowrap;
   justify-content: left;
   align-items: center;
-  background-color: #606060;
-}
-.login__validation--email {
-  background-color: #606060;
-}
-.login__validation--pwd {
-  background-color: #606060;
 }
 .login__svg--circle {
   width: auto;
@@ -402,7 +417,7 @@ body {
   transition-duration: 250ms;
   font-size: 1rem;
   transition-timing-function: cubic-bezier(0.9, 0, 0.51, 1);
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--grey);
   line-height: 1.5rem;
   left: 1rem;
   right: 1rem;
@@ -481,13 +496,21 @@ body {
 
 .footer {
   background: rgba(0, 0, 0, 0.75);
-  max-width: calc(100% - 3rem);
+  width: 100%;
+}
+.footer__container {
   margin: 0 auto;
   color: var(--grey);
+  padding: 1rem;
+}
+@media screen and (min-width: 740px) {
+  .footer__container {
+    padding: 2rem 3rem;
+  }
 }
 .footer__a {
-  text-decoration: underline;
   font-size: 1rem;
+  font-family: var(--tipo-secundaria);
 }
 .footer__col {
   padding: 1rem 0;
@@ -495,6 +518,7 @@ body {
 .footer__li {
   font-size: 0.8rem;
   margin-bottom: 1rem;
+  font-family: var(--tipo-secundaria);
 }
 .footer__p {
   font-size: 1rem;
@@ -506,7 +530,7 @@ body {
   -moz-column-count: 2;
        column-count: 2;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 750px) {
   .footer__ul {
     -moz-column-count: 3;
          column-count: 3;
@@ -519,13 +543,15 @@ body {
   width: 100%;
 }
 
-@media screen and (min-width: 600px) {
-  .header, .landing {
+@media screen and (min-width: 740px) {
+  .header,
+  .footer__container {
     max-width: calc(100% - 4rem);
   }
 }
 @media screen and (min-width: 1280px) {
-  .header, .landing {
+  .header,
+  .footer__container {
     max-width: calc(85% - 6rem);
   }
 }/*# sourceMappingURL=login.css.map */
