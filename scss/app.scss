@@ -161,7 +161,7 @@ body {
   &__container {
     @include flex(column, nowrap, center, flex-start);
     width: 100%;
-    max-width: 25rem;
+    max-width: 23rem;
   }
 
   &__validation {
@@ -243,6 +243,7 @@ body {
     padding: 0.75rem 1rem;
     text-align: center;
     font-family: var(--tipo-principal);
+    min-width:max-content;
     cursor: pointer;
     &:hover {
       background-color: var(--redhover);
