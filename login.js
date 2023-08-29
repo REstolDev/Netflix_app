@@ -35,8 +35,10 @@ const validationLogin = document.querySelectorAll(".login__validation");
 let inputValue = ["", ""];
 let inputValid = [false, false];
 let changeLogin = false;
+
 const regexNum = /^\d{4,}$/;
 const regexCustom = /^[\w\d\-!@#$%^&*()_+={}[\]:;"'<>,.?\/\\|]{4,60}$/;
+const regexEmail = /^([\da-zA-Z_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$/;
 
 // ---Validando el formulario---
 document.getElementById("loginBtn").onclick = (event) => {
