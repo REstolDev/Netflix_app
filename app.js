@@ -48,6 +48,8 @@ const inputVal = document.querySelectorAll(".register__input");
 const labelVal = document.querySelectorAll(".register__label");
 const validation = document.querySelectorAll(".register__validation");
 const btnVal = document.querySelectorAll(".register__btn");
+const valMessage= document.querySelectorAll(".register__valMessage");
+
 let email = "";
 let change = false;
 const regexEmail = /^([\da-zA-Z_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$/;
@@ -87,91 +89,10 @@ inputVal.forEach((v, i) => {
       email == ""
         ? "La dirección de correo es obligatoria."
         : "Escribe una dirección válida de correo electrónico.";
-    document.getElementById("valMessage").innerHTML = message;
+    valMessage[i].innerHTML = message;
   });
 
   inputVal[i].addEventListener("blur", () => {
     if (change == false || email == "") labelVal[i].classList.remove("active");
   });
 });
-
-//---- Validación y mensajes del formulario de la página Login ----
-
-const inputLoginVal = document.querySelectorAll(".login__input");
-const labelLoginVal = document.querySelectorAll(".login__label");
-const validationLogin = document.querySelectorAll(".login__validation");
-let inputValue = ["", ""];
-let inputValid = [false, false];
-let changeLogin = false;
-const regexNum = /^\d{4,}$/;
-const regexCustom = /^[\w\d\-!@#$%^&*()_+={}[\]:;"'<>,.?\/\\|]{4,60}$/;
-
-// ---Validando el formulario---
-document.getElementById("loginBtn").onclick = (event) => {
-  //evitar submit
-  event.preventDefault();
-
-  if (!(inputValid[0] && inputValid[1])) {
-    inputLoginVal[0].focus();
-    labelLoginVal[0].classList.add("active");
-
-    inputLoginVal.forEach((v, i) => {
-      inputLoginVal[i].classList.add("valFalse");
-      validationLogin[i].classList.add("valError");
-    });
-  } else alert("Esta es solamente una página de practicas de Ramon Estol");
-};
-
-inputLoginVal.forEach((v, i) => {
-  inputLoginVal[i].addEventListener("click", () =>
-    labelLoginVal[i].classList.add("active")
-  );
-  inputLoginVal[i].addEventListener("change", () => {
-    changeLogin = true;
-    labelLoginVal[i].classList.add("active");
-  });
-
-  /// --- validation de email ---
-  inputLoginVal[0].onkeyup = () => {
-    inputValue[0] = inputLoginVal[0].value;
-    if (regexEmail.exec(inputValue[0]) || regexNum.exec(inputValue[0])) {
-      inputLoginVal[0].classList.remove("valFalse");
-      validationLogin[0].classList.remove("valError");
-      inputValid[0] = true;
-    } else {
-      inputLoginVal[0].classList.add("valFalse");
-      validationLogin[0].classList.add("valError");
-      inputValid[0] = false;
-    }
-  };
-
-  //---- validation de pwd ---
-  inputLoginVal[1].onkeyup = () => {
-    inputValue[1] = inputLoginVal[1].value;
-    if (regexCustom.exec(inputValue[1])) {
-      inputLoginVal[1].classList.remove("valFalse");
-      validationLogin[1].classList.remove("valError");
-      inputValid[1] = true;
-    } else {
-      inputLoginVal[1].classList.add("valFalse");
-      validationLogin[1].classList.add("valError");
-      inputValid[1] = false;
-    }
-  };
-
-  inputLoginVal[i].addEventListener("blur", () => {
-    if (changeLogin == false || inputValue[i] == "")
-      labelLoginVal[i].classList.remove("active");
-  });
-});
-
-/// --- Learn More / activar texto extendido ---
-const extendedText = document.getElementById("captchaExtendedText");
-
-const toggleVisibility = () => {
-  if (extendedText.classList.value.includes("visible"))
-    extendedText.classList.remove("visible");
-  else extendedText.classList.add("visible");
-};
-
-document.getElementById("learnMore").onclick = toggleVisibility;

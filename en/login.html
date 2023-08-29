@@ -6,7 +6,7 @@
     <title>Netflix Login</title>
     <link rel="stylesheet" href="../css/login.css" />
     <link rel="stylesheet" href="../css/fonts/stylesheet.css" />
-    <script defer src="/app.js"></script>
+    <script defer src="../login.js"></script>
   </head>
   <body>
     <div class="container">
@@ -52,6 +52,7 @@
                     type="email"
                     name="email"
                     id="email"
+                    autocomplete="email"
                   />
                 </div>
                 <div class="login__validation">
@@ -212,10 +213,10 @@
                   id="header_select"
                   name="langSelect"
                 >
-                  <option selected="" label="Español" value="es-ES" lang="es">
+                  <option label="Español" value="es-ES" lang="es">
                     Español
                   </option>
-                  <option label="English" value="en-ES" lang="en">
+                  <option selected="" label="English" value="en-EN" lang="en">
                     English
                   </option>
                 </select>

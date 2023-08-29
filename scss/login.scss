@@ -9,7 +9,7 @@ body {
 .container {
   background-color: #000;
   @include tablet(740px) {
-    background-image: url("/source/img/portada-netflix.jpg");
+    background-image: url("../source/img/portada-netflix.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }

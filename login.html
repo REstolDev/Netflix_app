@@ -6,14 +6,14 @@
     <title>Netflix Login</title>
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/fonts/stylesheet.css" />
-    <script defer src="app.js"></script>
+    <script defer src="login.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="container__filter">
         <header class="header">
           <div class="header__logo">
-            <a href="/" title="Netflix" class="header__a">
+            <a href="index.html" title="Netflix" class="header__a">
               <svg
                 viewBox="0 0 111 30"
                 version="1.1"
@@ -52,6 +52,7 @@
                     type="email"
                     name="email"
                     id="email"
+                    autocomplete="email"
                   />
                 </div>
                 <div class="login__validation">
@@ -218,7 +219,7 @@
                   <option selected="" label="Español" value="es-ES" lang="es">
                     Español
                   </option>
-                  <option label="English" value="en-ES" lang="en">
+                  <option label="English" value="en-EN" lang="en">
                     English
                   </option>
                 </select>
