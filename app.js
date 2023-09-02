@@ -2,23 +2,26 @@
 /*
 window.onload = function () {
 
-    var ln = navigator.language || navigator.userLanguage;
-    // Validar que no se encuentre en la pagina correspondiente a su idioma 
-    let pagActual = window.location.pathname;
+  var ln = navigator.language || navigator.userLanguage;
+  // Validar que no se encuentre en la pagina correspondiente a su idioma 
+  let pagActual = window.location.pathname;
 
-    console.log(ln,pagActual)
-    
-    if (ln == ('en-US'||'en-EN') && !pagActual.includes("en/index.html"))
-        window.location.href = 'en/index.html';  
+  console.log(ln,pagActual)
+  
+  if ((ln === 'en-US' || ln === 'en-EN') && !pagActual.includes("en/index.html"))
+  window.location.href = 'en/index.html';
 
-}
-*/
+  if (ln === 'es-ES' && !pagActual.includes("index.html"))
+  window.location.href = '../index.html';
+
+}*/
 
 // ---- Selección de idioma ----
 const selectLang = document.querySelectorAll(".lang__select");
 
 selectLang.forEach((v, i) => {
   selectLang[i].addEventListener("change", () => {
+    
     console.log(selectLang[i].value);
     if (selectLang[i].value == "es-ES") window.location.href = "../index.html";
     else if (selectLang[i].value == "en-EN")

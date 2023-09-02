@@ -1,18 +1,4 @@
-//---- Control del idioma del navegador del cliente ----
-/*
-window.onload = function () {
 
-    var ln = navigator.language || navigator.userLanguage;
-    // Validar que no se encuentre en la pagina correspondiente a su idioma 
-    let pagActual = window.location.pathname;
-
-    console.log(ln,pagActual)
-    
-    if (ln == ('en-US'||'en-EN') && !pagActual.includes("en/index.html"))
-        window.location.href = 'en/index.html';  
-
-}
-*/
 
 // ---- Selección de idioma ----
 const selectLang = document.querySelectorAll(".lang__select");
@@ -45,6 +31,7 @@ document.getElementById("loginBtn").onclick = (event) => {
   //evitar submit
   event.preventDefault();
 
+  //
   if (!(inputValid[0] && inputValid[1])) {
     inputLoginVal[0].focus();
     labelLoginVal[0].classList.add("active");
@@ -55,15 +42,6 @@ document.getElementById("loginBtn").onclick = (event) => {
     });
   } else alert("Esta es solamente una página de practicas de Ramon Estol");
 };
-
-inputLoginVal.forEach((v, i) => {
-  inputLoginVal[i].addEventListener("click", () =>
-    labelLoginVal[i].classList.add("active")
-  );
-  inputLoginVal[i].addEventListener("change", () => {
-    changeLogin = true;
-    labelLoginVal[i].classList.add("active");
-  });
 
   /// --- validation de email ---
   inputLoginVal[0].onkeyup = () => {
@@ -93,8 +71,18 @@ inputLoginVal.forEach((v, i) => {
     }
   };
 
+  //---- control del desplazamiento del label ----
+  inputLoginVal.forEach((v, i) => {
+    inputLoginVal[i].addEventListener("click", () =>
+      labelLoginVal[i].classList.add("active")
+    );
+    inputLoginVal[i].addEventListener("change", () => {
+      changeLogin = true;
+      labelLoginVal[i].classList.add("active");
+    });
+
   inputLoginVal[i].addEventListener("blur", () => {
-    if (changeLogin == false || inputValue[i] == "")
+    if (!changeLogin || inputValue[i] == "")
       labelLoginVal[i].classList.remove("active");
   });
 });
