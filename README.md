@@ -119,4 +119,4 @@ Este proyecto fue creado por Ramon Estol y se inspira en la página de inicio de
 
 ## Licencia
 
-Este proyecto está bajo la Licencia . 
+Este proyecto está bajo la Licencia GPL. 
